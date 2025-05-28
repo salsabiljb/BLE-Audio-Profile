@@ -1,5 +1,5 @@
 # BLE-Audio-Profile + Ambient Noise Monitoring (nRF5340 + Zephyr)
-Here's a well-structured `README.md` draft focused on your BLE Audio + ambient noise monitoring application:
+
 
 ---
 
