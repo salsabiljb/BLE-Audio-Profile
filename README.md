@@ -12,15 +12,15 @@ This application demonstrates **Bluetooth LE Audio unicast streaming** using the
 
 ## 🚀 Features
 
-* ✅ BLE Audio unicast streaming (client/server) based on **Nordic nRF Connect SDK**
-* ✅ **LC3 codec** integration with ISO channels for low-latency audio
-* ✅ **Ambient noise monitoring thread**:
+*  BLE Audio unicast streaming (client/server) based on **Nordic nRF Connect SDK**
+*  **LC3 codec** integration with ISO channels for low-latency audio
+*  **Ambient noise monitoring thread**:
 
   * Captures real-time mic data via **I²S**
   * Computes **RMS noise levels**
   * Triggers LED feedback if threshold exceeded
-* ✅ Designed for **future ANC integration**
-* ✅ Runs under **Zephyr RTOS** for deterministic, multi-threaded execution
+*  Designed for **future ANC integration**
+*  Runs under **Zephyr RTOS** for deterministic, multi-threaded execution
 
 ---
 
@@ -36,15 +36,15 @@ This application demonstrates **Bluetooth LE Audio unicast streaming** using the
 
 ---
 
-## 🧠 Core Contribution: Ambient Noise Monitoring
+##  Core Contribution: Ambient Noise Monitoring
 
 A custom thread (`noise_level_thread`) was implemented within the existing `audio_system.c`:
 
-* 🧩 **Integrated into Zephyr’s thread model** alongside BLE streaming
-* 📉 **RMS noise estimation** over 64-sample windows (1.33ms @ 48kHz)
-* 🔴 **LED feedback** via GPIO when noise exceeds a predefined threshold
-* ⚙️ Non-blocking FIFO access to avoid CPU starvation
-* 🕒 Sampling interval: every 1s (can be optimized for lower latency)
+*  **Integrated into Zephyr’s thread model** alongside BLE streaming
+*  **RMS noise estimation** over 64-sample windows (1.33ms @ 48kHz)
+*  **LED feedback** via GPIO when noise exceeds a predefined threshold
+*  Non-blocking FIFO access to avoid CPU starvation
+*  Sampling interval: every 1s (can be optimized for lower latency)
 
 ### Known Limitations
 
